@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  background: #FAF7F2;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(193,81,47,0.12), transparent 20%), radial-gradient(circle at 90% 15%, rgba(240,220,211,0.18), transparent 25%), linear-gradient(180deg, #FAF7F2 0%, #F3EEE6 100%);
+  color: #2B2B2B;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+::selection {
+  background: rgba(79, 70, 229, 0.35);
+  color: #ffffff;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(28px);
+}
+
+.glow-ring {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 0 48px rgba(79,70,229,0.18);
+}
+
+.hero-bg-circles,
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -10;
+}
+
+.hero-bg-circles::before,
+.hero-bg-circles::after,
+.hero-bg-circles::nth-child(3) {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero-bg-circles::before {
+  width: 420px;
+  height: 420px;
+  top: -80px;
+  right: -90px;
+  background: rgba(79, 70, 229, 0.16);
+  filter: blur(110px);
+}
+
+.hero-bg-circles::after {
+  width: 300px;
+  height: 300px;
+  bottom: -70px;
+  left: -20px;
+  background: rgba(6, 182, 212, 0.12);
+  filter: blur(96px);
+}
+
+.hero-bg-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.12;
+}
+
+.ring-animation {
+  animation: spin-slow 18s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.animated-card:hover {
+  transform: translateY(-10px) rotateX(3deg) rotateY(-3deg);
+}
