@@ -46,7 +46,8 @@ function Projects() {
         </p>
       </div>
 
-      <div className="mt-10 grid gap-6 xl:grid-cols-2">
+      {/* Changed xl:grid-cols-2 to md:grid-cols-2 to show 2 projects side-by-side earlier */}
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
